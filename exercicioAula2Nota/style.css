@@ -1,5 +1,5 @@
     body{
-        background-color:rgb(204, 231, 205);
+        background-color:rgb(212, 230, 212);
         font-family: Verdana;
         font-weight: 200;
     }
@@ -7,12 +7,12 @@
     h1{
         text-align: center;
         color: rgb(46, 122, 42);
+        margin-top: auto;
     }
 
     p{
         color:hsl(160, 66%, 25%);
         text-align: left;
-        
     }
 
     a{
@@ -52,4 +52,19 @@
 
     label,input{
         margin-bottom: 8px;
+    }
+
+     .fotoGaleria{
+        width: 250px;
+        border-radius: 10%;
+    }
+
+    .redes{
+        display: flex; 
+        gap: 15px; 
+    }
+
+    .rede{
+        width: 40px; 
+        height: auto;
     }
