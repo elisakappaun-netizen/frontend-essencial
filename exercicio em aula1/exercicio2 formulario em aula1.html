@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+
+  </head>
+  <body>
+
+    <form action="" onsubmit="" method="post"></form>
+      <fieldset disabled>
+        <legend>Dados Pessoais</legend>
+
+        <label for="nome">Nome: </label>
+        <input
+          type="text"
+          id="nome"
+          name="usuario_nome"
+          placeholder="Nome de Usuário"
+          required
+        />
+
+        <br />
+        <br />
+
+        <label for="email">E-mail: </label>
+        <input
+          type="email"
+          id="email"
+          name="usuario_email"
+          placeholder="E-mail do Usuário"
+          required
+        />
+
+        <br />
+        <br />
+
+        <div>
+          <label for="data_nascimento"> Data de Nascimento:</label>
+          <input
+            type="date"
+            id="data_nascimento"
+            name="usuario_data_nascimento"
+            required
+          />
+        </div>
+      </fieldset>
+
+      <br />
+
+      <div>
+        <label for="senha">Senha: </label>
+        <input
+          type="password"
+          id="senha"
+          name="usuario_senha"
+          placeholder="Senha do Usuário"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="comentario">Comentário</label>
+        <textarea rows="4" id="comentario" name="usuario_comentario"></textarea>
+      </div>
+
+      <br />
+
+      <div>
+        <label for="estado">Estados</label>
+        <select id="estado" name="estado">
+          <option value="">Selecione...</option>
+          <option value="rj">Rio de Janeiro</option>
+          <option value="sp">São Paulo</option>
+        </select>
+      </div>
+
+      <br />
+
+      <div>
+        <label for="volume">Volume</label>
+        <input
+          type="range"
+          id="volume"
+          name="volume"
+          min="0"
+          max="100"
+          step="5"
+          value="5"
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="color">Selecione sua cor favorita</label>
+        <input type="color" id="color" value="#ffffff" />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="search">Pesquisar por: </label>
+        <input
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Digite o termo a ser buscado"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="file">Insira um documento: </label>
+        <input
+          type="file"
+          id="file"
+          name="file"
+          accept="image/*"
+          placeholder="Insira um documento"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <button type="submit">enviar</button>
+        <button type="reset">limpar</button>
+      </div>
+    </form>
+  </body>
+</html>
