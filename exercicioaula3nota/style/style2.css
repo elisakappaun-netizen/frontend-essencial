@@ -185,6 +185,25 @@ a:hover{
     font-family: Verdana;
 }
 
+.secaoReceita dl{
+    margin-bottom: 30px;
+    color: #06311c;
+    font-family: Verdana;
+}
+
+.secaoReceita dt{
+    font-weight: bold;
+    color: #a96b2d;
+    margin-top: 15p;
+    font-size: 18px;
+}
+
+.secaoReceita dd{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
 .linkVideo{
     font-size: 16px;
     color: #75a777;
@@ -376,16 +395,3 @@ html{
     background-color: #a96b2d;
     transform: translateY(-2px);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
