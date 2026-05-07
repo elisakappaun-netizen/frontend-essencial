@@ -1,0 +1,128 @@
+
+<!--Essa parte era do dia 2-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Dia 2</title>
+    <style>
+        /* Estilos básico*/
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px; color: #333; }
+        header, footer { background: #f4f4f4; padding: 1rem; text-align: center; border-radius: 8px; }
+        nav ul { list-style: none; padding: 0; display: flex; gap: 15px; justify-content: center; }
+        section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        form { display: grid; gap: 10px; background: #fafafa; padding: 15px; border-radius: 5px; }
+        .comentario-visual { color: #666; font-style: italic; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HTML SEMÂNTICO (Estrutura Principal) -->
+    <!-- <header> define o cabeçalho da página. Melhora SEO e ajuda leitores de tela a identificar o topo. -->
+    <header>
+        <h1>Meu Site Semântico - Dia 2</h1>
+        
+        <!-- <nav> indica que este bloco contém links de navegação principal. Fundamental para acessibilidade. -->
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- <main> envolve o conteúdo principal e exclusivo desta página. Deve haver apenas um por página. -->
+    <main>
+
+        <!-- <section> agrupa conteúdos que possuem um mesmo tema. -->
+        <section>
+            <h2>Exemplos de Listas</h2>
+            
+            <!-- <ul> (Unordered List): Itens onde a ordem NÃO importa (marcadores de ponto). -->
+            <h3>Minha Lista de Desejos (ul)</h3>
+            <ul>
+                <li>Viajar para a Europa</li> <!-- <li>: Item da lista (List Item) -->
+                <li>Aprender React</li>
+                <li>Comprar um monitor novo</li>
+            </ul>
+
+            <!-- <ol> (Ordered List): Itens onde a ordem É fundamental (passos, rankings). -->
+            <h3>Passo a passo para estudar (ol)</h3>
+            <ol>
+                <li>Ler a documentação</li>
+                <li>Praticar o código</li>
+                <li>Fazer os exercícios</li>
+            </ol>
+
+            <!-- <dl> (Description List): Usada para glossários ou pares de Chave/Valor. -->
+            <h3>Dicionário Simples (dl)</h3>
+            <dl>
+                <!-- <dt> (Description Term): O termo que está sendo definido. -->
+                <dt>HTML</dt>
+                <!-- <dd> (Description Details): A explicação ou definição do termo. -->
+                <dd>Linguagem usada para estruturar páginas na web.</dd>
+                
+                <dt>CSS</dt>
+                <dd>Linguagem usada para estilizar e dar cor às páginas.</dd>
+            </dl>
+        </section>
+
+        <section>
+            <!-- <article> representa um conteúdo que faz sentido por si só (ex: um post ou comentário). -->
+            <article>
+                <h2>Área de Formulário</h2>
+                <p>O formulário abaixo demonstra como capturar dados do usuário com validação básica.</p>
+
+                <!-- <form> container que agrupa os campos. 'action' define para onde enviar os dados. -->
+                <form action="#" method="POST">
+                    
+                    <!-- <label>: Conecta o texto ao input através do atributo 'for' e do 'id' do input. 
+                         Isso é CRUCIAL para acessibilidade. -->
+                    <label for="username">Nome de Usuário (Obrigatório):</label>
+                    <!-- 'required' impede o envio se o campo estiver vazio. -->
+                    <input type="text" id="username" name="username" required placeholder="Ex: dev_neves">
+
+                    <label for="idade">Idade (Apenas números):</label>
+                    <!-- 'pattern' utiliza Regex para validar o formato. \d* significa apenas dígitos. -->
+                    <input type="text" id="idade" name="idade" pattern="\d*" title="Por favor, digite apenas números.">
+
+                    <!-- Inputs tipo Radio: Permitem apenas uma escolha dentro do mesmo 'name'. -->
+                    <p>Qual seu nível de experiência?</p>
+                    <label>
+                        <input type="radio" name="nivel" value="junior" checked> Iniciante
+                    </label>
+                    <label>
+                        <input type="radio" name="nivel" value="pleno"> Intermediário
+                    </label>
+
+                    <!-- Checkbox: Permite múltiplas seleções (ou apenas confirmação). -->
+                    <label>
+                        <input type="checkbox" name="newsletter" checked> Desejo receber notificações
+                    </label>
+
+                    <!-- Botões de ação dentro do formulário. -->
+                    <div>
+                        <button type="button">Botão Simples (JS)</button>
+                        <button type="submit">Enviar Formulário (Submit)</button>
+                    </div>
+                </form>
+            </article>
+        </section>
+
+        <!-- <aside> serve para conteúdos laterais ou tangenciais (anúncios, links rápidos). -->
+        <aside>
+            <h4>Dica do Mentor</h4>
+            <p>Sempre use <code>&lt;label&gt;</code> para seus inputs, isso aumenta a área de clique!</p>
+        </aside>
+
+    </main>
+
+    <!-- <footer> define o rodapé, comumente usado para copyright, links legais ou redes sociais. -->
+    <footer>
+        <p>&copy; 2024 - Prática de HTML Semântico</p>
+    </footer>
+
+</body>
+</html>

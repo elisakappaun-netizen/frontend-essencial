@@ -1,92 +1,478 @@
-# Dia 3: Introdução ao CSS e Estilização
+# Dia 1: Introdução ao Frontend e HTML
 
 ## 🎯 Objetivo da Aula
 
-Compreender como aplicar estilos a uma página HTML, dominando os diferentes tipos de seletores, a hierarquia de especificidade e as principais propriedades de texto, cores, bordas e sombras.
+Entender os conceitos iniciais de desenvolvimento web e aprender a estrutura básica e as principais tags do HTML.
 
 ---
 
-# 1. Formas de Aplicar CSS
+# 1. O que é Frontend?
 
-Existem três maneiras de incluir CSS em um projeto:
+## 🔹 Frontend
 
-1. **Externo (Recomendado):** Arquivo `.css` separado vinculado via tag `<link>`. Facilita a manutenção e reutilização em várias páginas.
-2. **Interno:** Estilos escritos dentro da tag `<style>` no `<head>`. Ideal para estudos ou estilos específicos de uma única página.
-3. **Inline:** Estilo aplicado diretamente no atributo `style` da tag HTML. Possui a maior prioridade, mas dificulta a manutenção do código.
+É a parte **visual de um site**, ou seja, tudo aquilo que o usuário vê e interage.
 
----
+### Tecnologias principais:
 
-# 2. Seletores e Especificidade
-
-Os seletores definem quais elementos HTML serão estilizados.
-
-- **Seletor de Tag:** Afeta todos os elementos do tipo declarado (ex: `p`, `h1`, `body`).
-- **Seletor de Classe (`.nome`):** Identifica um grupo de elementos. Um mesmo elemento pode ter várias classes.
-- **Seletor de ID (`#nome`):** Identifica um elemento único na página.
-
-### ⚖️ Regra de Especificidade
-
-Quando há conflito de estilos, o navegador segue esta ordem de prioridade:
-**Inline (1000) > ID (100) > Classe (10) > Tag (1)**
+- **HTML** → estrutura
+    
+- **CSS** → estilo
+    
+- **JavaScript** → comportamento
+    
 
 ---
 
-# 3. Propriedades de Texto e Tipografia
+## 🔹 Backend
 
-Principais comandos para manipular a aparência do texto:
+É a parte que roda no servidor:
 
-- **`font-family`:** Define a fonte (sempre incluir uma fonte genérica como `sans-serif` como fallback).
-- **`font-size`:** Tamanho do texto (ex: `16px` ou `1rem`).
-- **`text-align`:** Alinhamento horizontal (`left`, `center`, `right`).
-- **`line-height`:** Espaçamento entre as linhas de um parágrafo.
-- **`text-transform`:** Modifica o texto para `uppercase`, `lowercase` ou `capitalize`.
-- **`text-decoration`:** Controla decorações como sublinhados (`underline`) ou riscado (`line-through`).
-
----
-
-# 4. Cores e Fundos
-
-As cores podem ser aplicadas ao texto (`color`) ou ao fundo (`background-color`):
-
-- **Nomes:** `tomato`, `blue`, `black`.
-- **Hexadecimal:** `#1d4ed8` (combinação de Vermelho, Verde e Azul).
-- **RGB / RGBA:** `rgba(0, 0, 0, 0.35)` — Onde o valor "A" (Alpha) define a transparência.
+- Processa dados
+    
+- Conecta com banco de dados
+    
+- Define regras do sistema
+    
 
 ---
 
-# 5. Bordas e Arredondamento
+## 🔹 Tipos de Linguagens
 
-A propriedade `border` permite definir a moldura de um elemento.
-
-- **Sintaxe:** `espessura estilo cor` (Ex: `2px solid #000`).
-- **Estilos comuns:** `solid` (linha contínua), `dashed` (tracejada), `dotted` (pontilhada).
-- **`border-radius`:** Arredonda os cantos. Valores altos (ex: `50px`) criam formatos de pílula ou círculos.
-
----
-
-# 6. Efeitos Visuais: Sombras
-
-- **`box-shadow`:** Adiciona sombra à caixa do elemento. Parâmetros: `deslocamento-x deslocamento-y desfoque cor`.
-- **`text-shadow`:** Aplica sombra diretamente às letras do texto.
+- **Marcação:** HTML
+    
+- **Estilização:** CSS
+    
+- **Programação:** JavaScript
+    
 
 ---
 
-# 📝 Atividades Práticas
+# 2. Estrutura Básica do HTML
 
-### Exercício 1: Hierarquia e Estilo
+Todo documento HTML segue uma estrutura padrão:
 
-Crie um cabeçalho centralizado com sombra no texto e mude a fonte padrão do corpo da página para uma fonte sem serifa.
+```html
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+</body>
+</html>
+```
 
-### Exercício 2: Cards de Conteúdo
+## Explicação das partes:
 
-Crie uma `div` com fundo branco, bordas arredondadas e uma sombra suave (`box-shadow`) para simular um card flutuante.
+### 🔸 `<!DOCTYPE html>`
 
-### Exercício 3: Botões e Links
+Define que o documento usa **HTML5**.
 
-Estilize um link para que ele não tenha sublinhado, tenha uma cor de fundo sólida, preenchimento interno (`padding`) e cantos arredondados, fazendo-o parecer um botão moderno.
+---
+
+### 🔸 `<html>`
+
+Elemento raiz da página.
+
+---
+
+### 🔸 `<head>`
+
+Contém **informações invisíveis**:
+
+- Metadados
+    
+- Título da página
+    
+- Configurações
+    
+
+---
+
+### 🔸 `<body>`
+
+Contém **tudo que aparece na tela**:
+
+- Textos
+    
+- Imagens
+    
+- Links
+    
+- Botões
+    
+
+---
+
+# 3. Metadados Importantes
+
+Dentro da tag `<head>` usamos:
+
+```html
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Descrição do site">
+<meta name="author" content="Seu nome">
+```
+
+## Para que servem?
+
+- **charset** → suporte a acentos
+    
+- **viewport** → responsividade
+    
+- **description** → SEO (Google)
+    
+- **author** → autor da página
+    
+
+---
+
+# 4. Tags Essenciais do HTML
+
+## 🔹 Cabeçalhos (Títulos)
+
+```html
+<h1>Mais importante</h1>
+<h2>...</h2>
+<h6>Menos importante</h6>
+```
+
+ Usados para organizar conteúdo (hierarquia)
+
+---
+
+## 🔹 Parágrafos
+
+```html
+<p>Isso é um parágrafo</p>
+```
+
+---
+
+## 🔹 Formatações de Texto
+
+| Tag        | Função                         |
+| ---------- | ------------------------------ |
+| `<b>`      | Negrito visual                 |
+| `<strong>` | Negrito semântico (importante) |
+| `<i>`      | Itálico                        |
+| `<u>`      | Sublinhado                     |
+| `<mark>`   | Destaque                       |
+| `<small>`  | Texto pequeno                  |
+| `<del>`    | Texto removido                 |
+| `<ins>`    | Texto inserido                 |
+| `<sub>`    | Subscrito                      |
+| `<sup>`    | Sobrescrito                    |
+
+---
+
+###  Exemplo:
+
+```html
+<p><strong>Importante</strong></p>
+<p><i>Itálico</i></p>
+<p>H<sub>2</sub>O</p>
+<p>10<sup>2</sup></p>
+```
+
+---
+
+#  5. Links
+
+## 🔹 Criando um link:
+
+```html
+<a href="https://www.google.com">Ir para o Google</a>
+```
+
+## 🔹 Abrir em nova aba:
+
+```html
+<a href="https://www.google.com" target="_blank">Abrir</a>
+```
+
+---
+
+# 6. Divisões: `div` vs `span`
+
+## 🔹 `<div>` (Bloco)
+
+- Ocupa toda a largura
+    
+- Quebra linha
+    
+
+```html
+<div>Sou uma div</div>
+```
+
+---
+
+## 🔹 `<span>` (Inline)
+
+- Não quebra linha
+    
+- Usado dentro de textos
+    
+
+```html
+<p>Texto com <span>destaque</span></p>
+```
+
+---
+
+## 📌 Diferença visual
+
+| Elemento | Tipo   | Comportamento           |
+| -------- | ------ | ----------------------- |
+| `<div>`  | Bloco  | Quebra linha            |
+| `<span>` | Inline | Continua na mesma linha |
+
+---
+
+# 🎨 7. Introdução ao CSS (básico)
+
+CSS pode ser usado dentro do HTML:
+
+```html
+<style>
+body {
+    font-family: sans-serif;
+}
+</style>
+```
+
+---
+
+##  Exemplo simples:
+
+```html
+<p style="color: blue;">Texto azul</p>
+```
+
+---
+
+#  8. Boas Práticas
+
+✅ Use HTML semântico (`strong` ao invés de `b`)  
+✅ Organize bem a estrutura  
+✅ Use indentação (código bonito)  
+✅ Sempre teste no navegador
+
+---
+
+#  9. Atividades Práticas
+
+## 📝 Exercício 1
+
+Crie um HTML com:
+
+- Um título (`h1`)
+    
+- Dois parágrafos
+    
+- Um texto em negrito e itálico
+    
+
+---
+
+## 📝 Exercício 2
+
+Adicione:
+
+- Um link para um site
+    
+- Uma `div` com cor de fundo
+    
+- Um `span` dentro de um texto
+    
+
+---
+
+## 📝 Exercício 3
+
+Monte uma página com:
+
+- Cabeçalho
+    
+- Conteúdo
+    
+- Rodapé
+    
+
+---
+
+#  Resumo Final
+
+Você aprendeu:
+
+✅ O que é frontend  
+✅ Estrutura básica do HTML  
+✅ Principais tags  
+✅ Links  
+✅ Diferença entre div e span  
+✅ Noções básicas de CSS
 
 ---
 
 # 📚 Próximo Passo
 
-No **Dia 4**, exploraremos o **Box Model** (margens, preenchimentos e tamanhos) e as técnicas iniciais de layout com **Flexbox**.
+No **Dia 2**, você vai aprender:
+
+- Listas    
+- HTML semântico
+- Formulários
+---
+
+
+# Dia 2: Estrutura e Semântica HTML, Formulários e Listas
+
+## Objetivo da Aula
+Aprofundar o uso do HTML com foco em organização, semântica e criação de formulários interativos.
+
+---
+
+## 1. Listas em HTML
+
+As listas são fundamentais para organizar informações de forma hierárquica ou sequencial.
+
+### 🔹 Lista Não Ordenada (`<ul>`)
+Usada quando a ordem dos itens não altera o sentido do conteúdo.
+
+```html
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+```
+
+### 🔹 Lista Ordenada (`<ol>`)
+Usada para sequências lógicas, passos ou rankings.
+
+```html
+<ol>
+  <li>Primeiro Passo</li>
+  <li>Segundo Passo</li>
+</ol>
+```
+
+### 🔹 Lista de Definição (`<dl>`)
+Ideal para glossários, onde temos um termo (`<dt>`) e sua descrição (`<dd>`).
+
+```html
+<dl>
+  <dt>HTML</dt>
+  <dd>Linguagem de marcação para estruturação web.</dd>
+</dl>
+```
+
+---
+
+## 2. HTML Semântico
+
+### O que é?
+O uso de tags que possuem **significado real** além da aparência, o que beneficia diretamente:
+*   **Acessibilidade:** Leitores de tela entendem a estrutura.
+*   **SEO:** Buscadores como Google indexam melhor o conteúdo.
+*   **Manutenibilidade:** Código mais fácil de ler para outros desenvolvedores.
+
+### Principais Tags Semânticas
+| Tag | Função |
+| :--- | :--- |
+| `<header>` | Cabeçalho do site ou de uma seção específica. |
+| `<nav>` | Conjunto principal de links de navegação. |
+| `<main>` | Conteúdo central e único da página. |
+| `<section>` | Agrupamento de conteúdos temáticos relacionados. |
+| `<article>` | Conteúdo independente e reutilizável (ex: post de blog). |
+| `<aside>` | Conteúdo lateral ou relacionado indiretamente. |
+| `<footer>` | Rodapé com informações de contato, autor ou copyright. |
+
+### Exemplo de Estrutura Semântica
+```html
+<header>
+  <h1>Meu Site</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Início</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Sobre</h2>
+    <p>Conteúdo da seção aqui...</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 Meu Projeto</p>
+</footer>
+```
+
+---
+
+## 3. Formulários HTML
+
+A ponte principal entre o usuário e o servidor para coleta de dados.
+
+### Tipos de Input Comuns
+| Tipo | Descrição |
+| :--- | :--- |
+| `text` | Campo de texto simples. |
+| `email` | Valida automaticamente se o formato é de um e-mail. |
+| `password` | Oculta os caracteres digitados. |
+| `radio` | Seleção única entre várias opções. |
+| `checkbox` | Seleção de múltiplas opções. |
+| `submit` | Botão que envia o formulário. |
+
+### Exemplo Prático de Formulário
+```html
+<form action="/submit" method="POST">
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <fieldset>
+    <legend>Gênero:</legend>
+    <input type="radio" id="masc" name="genero" value="m">
+    <label for="masc">Masculino</label>
+    <input type="radio" id="fem" name="genero" value="f">
+    <label for="fem">Feminino</label>
+  </fieldset>
+
+  <button type="submit">Enviar Cadastro</button>
+</form>
+```
+
+### Atributos Cruciais de Validação
+*   `required`: O campo deve ser preenchido obrigatoriamente.
+*   `placeholder`: Texto de dica dentro do campo antes da digitação.
+*   `pattern`: Validação via Regex (Expressões Regulares).
+*   `minlength` / `maxlength`: Limite de caracteres.
+
+---
+
+## Exercícios de Fixação
+
+### Exercício 1
+Crie um arquivo HTML que contenha uma lista de compras (`<ul>`) e uma lista de passos para um tutorial (`<ol>`).
+
+### Exercício 2
+Monte a estrutura de uma página de notícias utilizando as tags `<header>`, `<nav>`, `<main>`, `<article>` e `<footer>`.
+
+### Exercício 3
+Crie um formulário de contato completo com campos de Nome, Email, Assunto e um botão de envio, garantindo que todos sejam obrigatórios.
+
+---
+
+## Resumo
+Nesta aula você aprendeu como organizar dados de forma lógica com **listas**, como dar significado à sua estrutura com **HTML Semântico** e como iniciar interações com o usuário através de **formulários**.
+
+## Próximo Passo
+No **Dia 3**, mergulharemos no mundo das cores e estilos com:
+*   **Introdução ao CSS**
+*   **Seletores e Cores**
+*   **Box Model básico**
